@@ -22,8 +22,4 @@ Phase 1 is complete only when:
 - Firewall rules are applied and documented
 - You can demonstrate service start/stop/status and log inspection
 - All steps are reproducible from documentation in this repo
-# Phase 1
 
-Goal:
-Deliverables:
-Evidence:
