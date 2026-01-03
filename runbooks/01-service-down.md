@@ -34,3 +34,21 @@ systemctl restart <service>
 -validate configs before restart
 -Use config testing commands
 -Change control for productgion edits
+
+
+
+
+###
+Restart vs Reload
+-restart- stops service, may cause outage
+-reload: applied config without dropping connections
+
+
+Safe change procedure
+-Always run nginx -t first
+-use reload when possible
+-if reload dails, service may still be serving old config
+where to look
+-systemctl =state
+-journalctl = reason
+
