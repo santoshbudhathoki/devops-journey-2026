@@ -52,3 +52,15 @@ where to look
 -systemctl =state
 -journalctl = reason
 
+
+
+
+###Safe config change workflow (nginx example)
+
+    Run nginx -t before reload/restart
+
+    Prefer systemctl reload nginx to avoid downtime
+
+    If reload fails, nginx may continue serving old config
+
+    Use journalctl -u nginx for the real error
