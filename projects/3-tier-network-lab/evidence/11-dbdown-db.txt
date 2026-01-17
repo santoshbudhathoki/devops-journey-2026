@@ -1,0 +1,8 @@
+HTTP/1.1 500 INTERNAL SERVER ERROR
+Server: nginx/1.29.4
+Date: Mon, 12 Jan 2026 02:59:59 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 70
+Connection: keep-alive
+
+CRITICAL: db error: 2005 (HY000): Unknown MySQL server host 'db' (-3)

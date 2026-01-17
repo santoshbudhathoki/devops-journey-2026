@@ -1,0 +1,3 @@
+NAME      IMAGE                    COMMAND                  SERVICE   CREATED             STATUS             PORTS
+lab-app   3-tier-network-lab-app   "python app.py"          app       About an hour ago   Up About an hour   5000/tcp
+lab-lb    nginx:alpine             "/docker-entrypoint.…"   lb        2 hours ago         Up About an hour   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp
