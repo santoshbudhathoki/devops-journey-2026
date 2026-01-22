@@ -16,4 +16,4 @@ def test_version_matches_file():
 
     version_file = Path(__file__).resolve().parents[1] / "VERSION"
     expected = version_file.read_text(encoding="utf-8").strip()
-    assert resp.data.decode().strip() == expected
+    assert resp.data.decode().strip() == "BROKEN"
