@@ -11,3 +11,4 @@ The `/health` endpoint is a simple health check used to verify that the applicat
 - Used by tests, CI pipelines, and monitoring tools
 .
 
+
