@@ -1,13 +1,16 @@
 name: phase2-ci
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - "phase-2/ci-cd-pipeline-project/**"
+      - ".github/workflows/phase2-ci.yml"
   push:
     branches: ["main"]
     paths:
       - "phase-2/ci-cd-pipeline-project/**"
+      - ".github/workflows/phase2-ci.yml"
 
 jobs:
   test-and-lint:
