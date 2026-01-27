@@ -48,3 +48,29 @@ jobs:
 
           docker build -t phase2-app:${VERSION} .
           docker build -t phase2-app:${VERSION}-${SHORT_SHA} .
+
+
+      - name: Prepare build artifacts
+        run: |
+          VERSION=$(cat VERSION)
+          SHORT_SHA=${GITHUB_SHA::7}
+
+          mkdir -p artifacts
+          echo "${VERSION}" > artifacts/VERSION
+          printf "phase2-app:%s\nphase2-app:%s-%s\n" "${VERSION}" "${VERSION}" "${SHORT_SHA}" > artifacts/image-tags.txt
+
+          {
+            echo "sha=${GITHUB_SHA}"
+            echo "short_sha=${SHORT_SHA}"
+            echo "ref=${GITHUB_REF}"
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "run_number=${GITHUB_RUN_NUMBER}"
+            echo "built_at_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          } > artifacts/build-info.txt
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase2-build-${{ github.sha }}
+          path: phase-2/ci-cd-pipeline-project/artifacts
+
